@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiGen - AI 圖像生成</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css?v=12.0">
+</head>
+
+<body>
+
+    <!-- 生成介面 (直接顯示) -->
+    <div id="gen-container">
+        <div class="gen-layout">
+
+            <!-- 頂部導航 -->
+            <nav class="gen-nav">
+                <div class="brand">
+                    <h2>✨ AntiGen</h2>
+                </div>
+            </nav>
+
+            <!-- 主要內容區 -->
+            <main class="gen-main">
+
+                <!-- 圖片展示區 -->
+                <div class="image-showcase" id="image-showcase">
+                    <div class="placeholder-content">
+                        <div class="icon">🎨</div>
+                        <h3>等待靈感...</h3>
+                        <p>在下方輸入提示詞，讓 AI 為你繪畫</p>
+                    </div>
+                    <img id="generated-image" src="" alt="Generated Art" class="hidden">
+
+                    <!-- 進度條區域 -->
+                    <div id="image-loading" class="hidden">
+                        <div class="loading-status">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="progress-bar"></div>
+                            </div>
+                            <p id="progress-text">AI 正在繪圖中... 0%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 控制區 -->
+                <div class="control-panel">
+                    <!-- 專業設定 -->
+                    <div class="pro-tools">
+                        <div class="tool-group">
+                            <label>畫布比例</label>
+                            <select id="ratio-select">
+                                <option value="1:1">正方形 (1:1)</option>
+                                <option value="16:9">電腦桌布 (16:9)</option>
+                                <option value="9:16">手機桌布 (9:16)</option>
+                                <option value="4:3">傳統相片 (4:3)</option>
+                            </select>
+                        </div>
+                        <div class="tool-group">
+                            <label>藝術風格</label>
+                            <select id="style-select">
+                                <option value="flux">通用 (Default)</option>
+                                <option value="flux-realism">超寫實 (Realism)</option>
+                                <option value="flux-anime">日系動漫 (Anime)</option>
+                                <option value="flux-3d">3D 渲染 (3D)</option>
+                                <option value="any-dark">暗黑風格 (Dark)</option>
+                            </select>
+                        </div>
+                        <div class="tool-group toggle-group">
+                            <label for="enhance-toggle">AI 優化</label>
+                            <input type="checkbox" id="enhance-toggle" checked>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <input type="text" id="prompt-input" placeholder="描述你想看到的畫面... (例如：一隻在太空漫步的貓)"
+                            autocomplete="off">
+                        <button id="generate-btn">
+                            <span>✨ 生成</span>
+                        </button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- 應用邏輯 -->
+    <script src="app.js?v=11.1"></script>
+
+</body>
+
+</html>
